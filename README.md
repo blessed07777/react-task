@@ -26,10 +26,10 @@
 ## 📸 Скриншоты
 
 ### ❌ Ошибка при неправильном вводе
-![Ошибка](./screenshots/error.png)
+![Ошибка](./screenshots/error.jpeg)
 
 ### ✅ Успешный поиск
-![Погода](./screenshots/success.png)
+![Погода](./screenshots/success)
 
 ### 🔎 Начальный экран
 ![Старт](./screenshots/start.png)
