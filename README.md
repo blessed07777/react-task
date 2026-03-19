@@ -1,75 +1,80 @@
-# React + TypeScript + Vite
+# 🌤️ Weather App (React + WeatherAPI)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простое веб-приложение для просмотра погоды по городу с использованием WeatherAPI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Функционал
 
-## React Compiler
+- 🔍 Поиск погоды по городу
+- 🌡️ Отображение температуры
+- 🌬️ Ветер, влажность, ощущаемая температура
+- ⏱️ Локальное время
+- ⚠️ Обработка ошибок (если город не найден)
+- ⌨️ Поиск по Enter
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 🛠️ Используемые технологии
 
-## Expanding the ESLint configuration
+- React + TypeScript
+- Fetch API
+- WeatherAPI
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📸 Скриншоты
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### ❌ Ошибка при неправильном вводе
+![Ошибка](./screenshots/error.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### ✅ Успешный поиск
+![Погода](./screenshots/success.png)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🔎 Начальный экран
+![Старт](./screenshots/start.png)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🔧 Проведённый аудит сайта
+
+В ходе выполнения задания были выявлены следующие проблемы:
+
+### 1. Ошибка ввода города
+- ❌ Проблема: пользователь вводил `asstana`
+- ✅ Решение: корректный ввод + обработка ошибки API
+
+### 2. Отсутствие обработки ошибок API
+- ❌ Проблема: при неверном городе приложение ломалось
+- ✅ Решение: добавлен блок try/catch и вывод ошибки
+
+### 3. UX (удобство)
+- ❌ Проблема: нельзя было искать через Enter
+- ✅ Решение: добавлен обработчик клавиши Enter
+
+---
+
+## ⚙️ Улучшения
+
+- 🎨 Улучшен UI (карточка, тени, градиенты)
+- 📱 Адаптивная верстка
+- ⚡ Оптимизация запросов
+- 🧠 Добавлена логика обработки состояний (loading, error)
+
+---
+
+## 🌍 Публикация
+
+Приложение можно развернуть через:
+
+- GitHub Pages
+- Netlify
+- Vercel
+
+---
+
+## ▶️ Запуск проекта
+
+```bash
+npm install
+npm run dev
